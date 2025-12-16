@@ -1,0 +1,1 @@
+export type BloomFilterReturn = "no" | "maybe";

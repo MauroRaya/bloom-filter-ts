@@ -1,4 +1,4 @@
-export type BloomFilterReturn = "no" | "maybe";
+import { BloomFilterReturn } from "./types";
 
 export class BloomFilter {
     #bitsize: Uint8Array;
