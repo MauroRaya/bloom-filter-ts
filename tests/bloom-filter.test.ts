@@ -7,12 +7,10 @@ describe("BloomFilter::contains()", () => {
     let bloomFilter: BloomFilter;
 
     before(() => {
-        const bitsizeLength = 10;
-
         bloomFilter = new BloomFilter(10, [
-            (x: number) => x % bitsizeLength,
-            (x: number) => (2 * x) % bitsizeLength,
-            (x: number) => (x * x) % bitsizeLength
+            (x: number) => x,
+            (x: number) => (2 * x),
+            (x: number) => (x * x)
         ]);
 
         bloomFilter.insert(10);

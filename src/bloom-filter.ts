@@ -9,7 +9,10 @@ export class BloomFilter {
         hashFunctions: Function[]
     ) {
         this.#bitsize = new Uint8Array(bitsizeLength).fill(0);
-        this.#hashFunctions = hashFunctions;
+
+        this.#hashFunctions = hashFunctions.map(_function => {
+            return (value: number) => _function(value) % bitsizeLength;
+        });
     }
 
     insert<T extends number>(value: T) {
